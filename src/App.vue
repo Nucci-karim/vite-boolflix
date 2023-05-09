@@ -16,7 +16,28 @@ export default{
 
   },
   methods: {
-
+    callApi(){
+      if(store.archtypeValue !== ''){
+        axios.get(`https://api.themoviedb.org/3/search/movie?api_key=64e0fd76883f9c2095642a9cdab08e9e&language=it_IT&query=${store.movieValue}`)
+           .then(res => {
+             console.log(res.data)
+             const datiApi = res.data
+             this.store.arrayMovies = datiApi
+           })
+      } else{
+        axios.get('https://api.themoviedb.org/3/search/movie?api_key=64e0fd76883f9c2095642a9cdab08e9e&language=it_IT&query=')
+           .then(res => {
+             console.log(res.data)
+             const datiApi = res.data
+             this.store.arrayMovies = datiApi
+           })
+      }
+      // axios.get(`https://api.themoviedb.org/3/search/movie?api_key=64e0fd76883f9c2095642a9cdab08e9e&language=it_IT&query=${store.movieValue}
+      // .then((res) =>{
+      //   console.log(res.data)
+      //   store.arrayMovies = res.data
+      // })
+    }
   }
 }
 </script>
