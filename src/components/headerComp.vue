@@ -22,9 +22,17 @@ export default{
         axios.get(`https://api.themoviedb.org/3/search/movie?api_key=${store.key}&query=${store.movieValue}`)
            .then(res => {
              console.log(res.data.results)
-             const datiApi = res.data.results
-             this.store.arrayMovies = datiApi
+             const datiApiM = res.data.results
+             this.store.arrayMovies = datiApiM
+
+              axios.get(`https://api.themoviedb.org/3/search/tv?api_key=${store.key}&query=${store.movieValue}`)
+              .then(res => {
+                console.log(res.data.results)
+                const datiApiSTV = res.data.results
+                this.store.arrayTVseries = datiApiSTV
+            })
            })
+           
       } else{
          axios.get(`https://api.themoviedb.org/3/search/movie?api_key=${store.key}&query=batman`)
             .then(res => {
