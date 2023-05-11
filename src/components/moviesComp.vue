@@ -17,7 +17,14 @@ export default{
 
 <template>
   <div id="movies" class="container d-flex align-items-center">
-    <singleMovieComp/>
+      <singleMovieComp v-for="(movie, index) in store.arrayMovies"
+    :key="index"
+    :info="movie"/>
+    
+      <singleMovieComp v-for="(tv, index) in store.arrayTVseries"
+    :key="index"
+    :info="tv"/>
+    
   </div>
 </template>
 

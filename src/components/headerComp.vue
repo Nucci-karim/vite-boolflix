@@ -66,7 +66,6 @@ export default{
 
 <style lang="scss" scoped>
 #header{
-  background-color: rgb(0 0 0);
   h1{
   color: red;
   }

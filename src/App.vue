@@ -24,8 +24,10 @@ export default{
 
 <template>
   <div id="tutto">
-    <headerComp/>
-    <main>
+    <header class="sticky-top">
+      <headerComp/>
+    </header>
+    <main class="overflow-auto">
       <moviesComp/>
     </main>
   </div>
@@ -40,7 +42,12 @@ export default{
 height: 100vh;
 }
 main{
+  height: 90%;
   background-color: rgb(59 59 59);
+}
+header{
+  height: 10%;
+  background-color: black;
 }
 
 
