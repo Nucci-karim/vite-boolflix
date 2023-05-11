@@ -76,6 +76,9 @@ export default{
         <span class="card-text">Titolo Originale: {{getOriginalTitle()}}</span>
         <div class="d-flex align-items-center card-text">
             <div class="mx-2">voto: {{ getVote() }}</div>
+            <span>
+                <i v-for="n in 5" class="fa-star" :class="(n <= getVote()) ? 'fa-solid' : 'fa-regular'"></i>
+            </span>
         </div>
     </div>
 </div>
