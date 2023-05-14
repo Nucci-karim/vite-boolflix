@@ -64,7 +64,7 @@ export default{
 
 <template>
 <div class="card col-3 margine">
-    <img :src="'https://image.tmdb.org/t/p/w500'+ info.poster_path" :alt="getOriginalTitle()">
+    <img :src="'https://image.tmdb.org/t/p/w342'+ info.poster_path" :alt="getOriginalTitle()">
     <div class="card-body">
         <div class="d-flex align-items-center justify-content-between card-text">
             <h4 class="card-title">{{getTitle()}}</h4>
